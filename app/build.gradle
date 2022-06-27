@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.rainbowpie.plugin.v2"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 2000041
+        versionName "1.2.41"
+    }
+    
+    lintOptions {
+        disable "InvalidPackage"
+        disable "MissingTranslation"
+   }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+	// implementation 'org.json:json:20211205'
+}
